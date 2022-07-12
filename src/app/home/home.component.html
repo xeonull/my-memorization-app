@@ -1,0 +1,24 @@
+<div>
+  <input
+    class="input-style"
+    (keyup.enter)="keyEnterHandler($event)"
+    type="text"
+    placeholder="Напишите слова для изучения"
+    #newInput
+    (input)="inputHandler(newInput.value)"
+    [value]="newText"
+    [style.margin-right.px]="15"
+  />
+  <button class="btn-style" (click)="addTextHandler()">
+    Добавить новые слова
+  </button>
+  <div [class]="messageClass">{{ messageText }}</div>
+</div>
+<h3 *ngIf="words.length; else elseBlock">Последние добавленные слова:</h3>
+<ng-template #elseBlock><h3>Здесь будет список изучаемых слов</h3></ng-template>
+<div class="box-word-list">
+  <app-word-item
+    *ngFor="let w of words.slice().reverse()"
+    [word]="w"
+  ></app-word-item>
+</div>

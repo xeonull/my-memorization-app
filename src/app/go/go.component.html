@@ -1,0 +1,33 @@
+<div *ngIf="!isActive; else exerciseBlock" style="margin: 50px 0 50px 0">
+  <div *ngIf="!!arrayAnswer.length" style="margin: 20px 0 20px 0">
+    <h4>Верных ответов: {{ rightAnswerCount }} из {{settings.wordsCount}}</h4>
+  </div>
+  <h3>Пройдите тестирование:</h3>
+  <div>
+    <button class="btn-style btn-start" (click)="startHandler()">Начать</button>
+  </div>
+</div>
+
+<ng-template #exerciseBlock>
+  <div class="box-word-list">
+    <h2>{{currentAnswer}} / {{settings.wordsCount}}</h2>
+    <h3>Напишите перевод для слова:</h3>
+    <h2>{{ word.word }}</h2>
+    <input
+      class="input-style"
+      type="text"
+      placeholder="Введите Ваш ответ"
+      #newInput
+      (input)="inputHandler(newInput.value)"
+      [value]="inputAnswer"
+      [attr.disabled]="isNext ? '' : null"
+    /><p>{{message}}</p>
+    <div class="box-word-list">
+      <button class="btn-style" (click)="dontknowHandler()" 
+      [style.margin-right.px]="100">Не знаю</button>
+      <button class="btn-style" (click)="nextHandler()" [disabled]="!isNext">
+        {{currentAnswer == settings.wordsCount ? 'Готово' : 'Дальше'}}
+      </button>
+    </div>
+  </div>
+</ng-template>

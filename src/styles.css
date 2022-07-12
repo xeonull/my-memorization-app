@@ -1,0 +1,249 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+.ul-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.li-nav {
+  float: left;
+}
+
+.li-nav a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 16px 16px;
+  text-decoration: none;
+}
+
+.li-nav a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.li-nav a.active {
+  color: white;
+  background-color: #670b92;
+}
+
+.box-block {
+  margin: 10px;
+  padding: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: rgb(60, 55, 80);
+  background-color: #f8f9fa;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  position: relative;
+  min-height: 130px;
+}
+
+.box-nav {
+  position: absolute;
+  top: 99px;
+  right: 0;
+  width: auto;
+  padding-right: 15px;
+}
+
+.box-word-list {
+  list-style-type: none;
+  margin: 1rem;
+  text-align: center;
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  padding: 2px 5px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.word-trans {
+  font-weight: normal;
+  font-size: 0.8em;
+  font-style: italic;
+}
+.box-word {
+  text-align: center;
+  max-width: 200px;
+  padding: 3px 20px 3px 20px;
+  margin: 2px;
+  position: relative;
+  display: inline-block;
+  background-color: #e8d7f0;
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
+}
+.box-word:hover {
+  -o-transform: scale(1.8);
+  -ms-transform: scale(1.8);
+  -moz-transform: scale(1.8);
+  -webkit-transform: scale(1.8);
+  transform: scale(2);
+  filter: opacity(88%);
+  background-color: #e1c3f0;
+  z-index: 999;
+}
+
+.btn-style {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 1px 15px 0 15px;
+  outline: none;
+  border: 1px solid #6c757d;
+  border-radius: 3px;
+  height: 42px;
+  line-height: 38px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #6c757d;
+  background-color: #fff;
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;
+}
+.btn-style:hover {
+  background-color: #ddd;
+  border-color: #6c757d;
+}
+.btn-style:active {
+  color: #fff;
+  background-color: #670b92;
+  border-color: #670b92;
+}
+.btn-style:disabled {
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.btn-start {
+  margin-top: 20px;
+  height: 52px;
+  background-color: #f5dbff;
+  min-width: 120px;
+}
+.btn-start:hover {
+  background-color: #ecbdff;
+  border-color: #6c757d;
+}
+
+.input-style {
+  display: inline-block;
+  width: 280px;
+  box-shadow: inset 0 -2px 40px rgba(0, 0, 0, 0.03);
+  height: 30px;
+  padding: 5px 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: rgb(255, 255, 255);
+  background-clip: padding-box;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.select-style {
+  top: 8px;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  width: 200px;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #fff;
+  background: #fff;
+  position: relative;
+}
+
+.select-style select {
+  padding: 5px 8px;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.select-style:after {
+  top: 50%;
+  left: 85%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-top-color: #000000;
+  border-width: 5px;
+  margin-top: -2px;
+  z-index: 100;
+}
+.select-style select:focus {
+  outline: none;
+}
+
+.box-settings {
+  list-style-type: none;
+  margin: 1rem;
+  text-align: left;
+  position: relative;
+}
+
+.box-settings-block {
+  margin-top: 0.8rem;
+}
+
+.box-label {
+  display: inline-block;
+  position: relative;
+  padding: 10px 10px 10px 0;
+  width: 240px;
+}
+
+.m-hide {
+  padding: 8px;
+  visibility: hidden;
+  opacity: 0;
+  color: crimson;
+  font-weight: bold;
+  font-size: 0.8em;
+  -webkit-transition: visibility 0s linear 2s, opacity 2s;
+  transition: visibility 0s linear 2s, opacity 2s;
+  height: 18px;
+}
+.m-show {
+  padding: 8px;
+  visibility: visible;
+  opacity: 1;
+  color: crimson;
+  font-weight: bold;
+  font-size: 0.8em;
+  height: 18px;
+}
+
+.m-big-show {
+  margin-top: 10px;
+  font-size: 1.2em;
+}

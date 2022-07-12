@@ -1,0 +1,60 @@
+<div>
+  <h3>Настройки</h3>
+  <form [formGroup]="settingsForm">
+
+    <div *ngIf="settingsForm.errors?.['LanguageValidator'] && (settingsForm.touched || settingsForm.dirty)"
+      class="m-show m-big-show">
+      {{settingsForm.errors?.['LanguageValidator'].message}}
+    </div>
+
+    <div class="box-settings">
+      <div class="box-settings-block">
+        <div class="box-label">
+          <label for="lang_native">Укажите Ваш язык:</label>
+        </div>
+        <div class="select-style">
+          <select id="lang_native" formControlName="NativeLanguage">
+            <option [value]="lang.code" *ngFor="let lang of Languages">
+              {{ lang.title }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="box-settings-block">
+        <div class="box-label">
+          <label for="lang_learn">Укажите изучаемый язык:</label>
+        </div>
+        <div class="select-style">
+          <select id="lang_learn" formControlName="LearnLanguage">
+            <option [value]="lang.code" *ngFor="let lang of Languages">
+              {{ lang.title }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="box-settings-block">
+        <div class="box-label">
+          <label for="words-count">Количество слов в упражнении:</label>
+        </div>
+        <div class="select-style">
+          <select id="words-count" formControlName="WordsCount">
+            >
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="box-settings-block">
+        <button class="btn-style" (click)="onSave()">Сохранить</button>
+      </div>
+    </div>
+  </form>
+</div>
